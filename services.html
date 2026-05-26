@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jadBerry | Услуги — разработка под ключ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/services.css">
+</head>
+<body>
+
+    <div id="main-header">
+        <div class="logo">JB</div>
+        <nav class="nav-menu">
+            <a href="index.html">Главная</a>
+            <a href="about.html">Обо мне</a>
+            <a href="index.html#portfolio" class="nav-link">Проекты</a>
+            <a href="blog-forum.html">Форум</a>
+            <a href="contact.html">Контакты</a>
+        </nav>
+    </div>
+
+    <div id="compact-header">
+        <a href="index.html">JB</a>
+        <a href="about.html">Обо мне</a>
+        <a href="index.html#portfolio" class="nav-link">Проекты</a>
+        <a href="blog-forum.html">Форум</a>
+        <a href="contact.html">Контакты</a>
+    </div>
+
+    <main class="services-page">
+
+        <div class="services-hero">
+            <span class="hero-badge">Что я предлагаю</span>
+            <h1 class="services-title">Мои услуги</h1>
+            <p class="services-subtitle">Разработка под ключ — от идеи до готового продукта</p>
+        </div>
+
+        <!-- Список услуг -->
+        <div class="services-grid" id="services-grid">
+            <!-- услуги будут вставлены через JS -->
+        </div>
+
+        <!-- Примеры работ / выдуманные кейсы -->
+        <div class="works-block">
+            <div class="section-header">
+                <span class="section-tag">Портфолио</span>
+                <h2>Примеры выполненных работ</h2>
+                <p>Несколько проектов, которые я реализовал для своих клиентов</p>
+            </div>
+            <div class="works-grid" id="works-grid">
+                <!-- примеры работ через JS -->
+            </div>
+        </div>
+
+        <!-- Отзывы клиентов -->
+        <div class="reviews-block">
+            <div class="section-header">
+                <span class="section-tag">Отзывы</span>
+                <h2>Что говорят клиенты</h2>
+                <p>Мне доверяют и рекомендуют</p>
+            </div>
+            <div class="reviews-grid" id="reviews-grid">
+                <!-- отзывы через JS -->
+            </div>
+        </div>
+
+        <!-- Форма заявки -->
+        <div class="form-block">
+            <div class="form-container">
+                <div class="form-text">
+                    <h2>Оставить заявку</h2>
+                    <p>Расскажите о вашем проекте, и я свяжусь с вами для обсуждения деталей</p>
+                </div>
+                <form id="service-form" class="service-form">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email или телефон" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="service-select" required>
+                            <option value="" disabled selected>Выберите услугу</option>
+                            <option value="Сайт-визитка">Сайт-визитка</option>
+                            <option value="Корпоративный сайт">Корпоративный сайт</option>
+                            <option value="Интернет-магазин">Интернет-магазин</option>
+                            <option value="Мультиплатформенное приложение (HAML)">Мультиплатформенное приложение (HAML)</option>
+                            <option value="База данных (SQL)">База данных (SQL)</option>
+                            <option value="Полное сопровождение">Полное сопровождение проекта</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="4" placeholder="Краткое описание задачи..." style="resize: none;"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary submit-btn">Отправить заявку →</button>
+                </form>
+            </div>
+            <div class="hero-image-placeholder">
+                <img src="image/tg.jpg" alt="jadBerry logo" class="hero-image">
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>JB</div>
+            <p>jadBerry — современная digital-разработка</p>
+            <div class="footer-links">
+                <a href="index.html">Главная</a>
+                <a href="about.html">Обо мне</a>
+                <a href="project_one.html">Проекты</a>
+                <a href="blog-forum.html">Форум</a>
+                <a href="contact.html">Контакты</a>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2025 jadBerry. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/services.js"></script>
+
+    <!-- Модальное окно "Заявка отправлена" -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <i class="fas fa-check-circle" style="font-size: 64px; color: #2e7d32; margin-bottom: 20px;"></i>
+            <h2>Заявка отправлена!</h2>
+            <p>Спасибо за обращение. Я свяжусь с вами в ближайшее время.</p>
+            <button class="modal-btn">Хорошо</button>
+        </div>
+    </div>
+
+</body>
+</html>
