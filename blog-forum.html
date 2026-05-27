@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jadBerry | Форум — новости разработки</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/blog-forum.css">
+</head>
+<body>
+
+    <!-- большая шапка -->
+    <header id="header" class="header">
+        <div class="logo">JB</div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">Главная</a>
+            <a href="about.html" class="nav-link">Обо мне</a>
+            <a href="index.html#portfolio" class="nav-link">Проекты</a>
+            <a href="services.html" class="nav-link">Услуги</a>
+            <a href="contact.html" class="nav-link">Контакты</a>
+        </nav>
+
+        <div class="burger" id="burgerBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </header>
+
+    <div id="compactheader" class="compactheader">
+        <a href="index.html" style="color: white;">JB</a>
+        <nav class="nav-menu-small">
+            <a href="index.html" class="nav-link">Главная</a>
+            <a href="about.html" class="nav-link">Обо мне</a>
+            <a href="index.html#portfolio" class="nav-link">Проекты</a>
+            <a href="services.html" class="nav-link">Услуги</a>
+            <a href="contact.html" class="nav-link">Контакты</a>
+        </nav>
+    </div>
+
+    <main class="blog-page">
+
+        <!-- Hero секция -->
+        <div class="blog-hero">
+            <span class="hero-badge">Общение и новости</span>
+            <h1 class="blog-title">Форум</h1>
+            <p class="blog-subtitle">Новости разработки, обсуждения и живое общение</p>
+        </div>
+
+        <!-- Сетка постов -->
+        <div class="posts-grid" id="posts-grid">
+            <!-- посыт через js -->
+        </div>
+
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>JB</div>
+            <p>jadBerry — современная digital-разработка</p>
+            <div class="footer-links">
+                <a href="index.html">Главная</a>
+                <a href="about.html">Обо мне</a>
+                <a href="project_one.html">Проекты</a>
+                <a href="services.html">Услуги</a>
+                <a href="contact.html">Контакты</a>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2025 jadBerry. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Главная</a>
+        <a href="about.html">Обо мне</a>
+        <a href="index.html#portfolio">Проекты</a>
+        <a href="services.html">Услуги</a>
+        <a href="contact.html">Контакты</a>
+    </div>
+
+    <script src="js/blog-forum.js"></script>
+</body>
+</html>

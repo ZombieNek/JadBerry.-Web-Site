@@ -1,0 +1,643 @@
+/* базовые и глоабльные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #FFFBF0;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 65px, rgba(0, 150, 60, 0.03) 80px, rgba(0, 150, 60, 0.03) 80.1px, transparent 80.5px, transparent 160px), repeating-linear-gradient(-45deg, transparent, transparent 65px, rgba(0, 150, 60, 0.03) 80px, rgba(0, 150, 60, 0.03) 80.1px, transparent 80.5px, transparent 160px);
+    background-attachment: fixed;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #1a2a1a;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+/*-------------------------------------------------------*/
+
+/* шапки */
+
+/* Большая шапка */
+#header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, rgba(0, 200, 83, 0.75) 0%, rgba(0, 180, 70, 0.8) 100%);
+    backdrop-filter: blur(12px);
+    border-radius: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 150, 60, 0.25);
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+    #header.hidden {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-100%);
+        pointer-events: none;
+    }
+
+/* Логотип */
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    background: rgba(255,255,255,0.2);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+}
+
+/* Навигация в шапке */
+.nav-menu {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-link {
+    color: white;
+    font-weight: 500;
+    transition: all 0.2s;
+    font-size: 15px;
+}
+
+    .nav-link:hover {
+        opacity: 0.8;
+        transform: translateY(-2px);
+    }
+
+/* Маленькая шапка */
+#compactheader {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    padding: 10px 24px;
+    background: linear-gradient(135deg, rgba(0, 200, 83, 0.85) 0%, rgba(0, 180, 70, 0.9) 100%);
+    backdrop-filter: blur(12px);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    z-index: 1001;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+    #compactheader.visible {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+/* Навигация в маленькой шапке */
+.nav-menu-small {
+    display: flex;
+    gap: 20px;
+}
+
+    .nav-menu-small a {
+        color: white;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+        .nav-menu-small a:hover {
+            opacity: 0.8;
+        }
+
+/*-------------------------------------------------------*/
+
+/* контейнер страницы */
+.blog-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 140px 5% 80px;
+}
+/*-------------------------------------------------------*/
+
+/* hero секция*/
+.blog-hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero-badge {
+    background: rgba(0, 180, 70, 0.15);
+    color: #2e7d32;
+    padding: 6px 18px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.blog-title {
+    font-size: 72px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #2e7d32, #4caf50);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 16px;
+}
+
+.blog-subtitle {
+    font-size: 20px;
+    color: #3a5a3a;
+}
+/*-------------------------------------------------------*/
+
+/* сетка постов */
+.posts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+/*-------------------------------------------------------*/
+
+/* карточка поста */
+.post-card {
+    background: rgba(255,255,255,0.4);
+    backdrop-filter: blur(12px);
+    border-radius: 32px;
+    padding: 32px;
+    transition: all 0.3s;
+    border: 1px solid rgba(255,255,255,0.6);
+}
+
+    .post-card:hover {
+        background: rgba(255,255,255,0.6);
+        transform: translateY(-4px);
+    }
+
+/* Шапка поста (автор, дата, категория) */
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.post-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.author-avatar {
+    width: 48px;
+    height: 48px;
+    background: rgba(0,150,60,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2e7d32;
+    font-size: 20px;
+}
+
+.author-name {
+    font-weight: 700;
+    color: #1a3a1a;
+}
+
+.post-date {
+    font-size: 12px;
+    color: #3a5a3a;
+}
+
+.post-category {
+    background: rgba(0,150,60,0.15);
+    color: #2e7d32;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Тело поста */
+.post-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a3a1a;
+    margin-bottom: 16px;
+}
+
+.post-content {
+    color: #2a4a2a;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Статистика поста (лайки, комментарии) */
+.post-stats {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0,150,60,0.2);
+}
+
+/* Кнопка лайка */
+.like-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #3a5a3a;
+    transition: all 0.2s;
+    padding: 6px 12px;
+    border-radius: 30px;
+}
+
+    .like-btn:hover {
+        background: rgba(0,150,60,0.1);
+    }
+
+    .like-btn.liked {
+        color: #e74c3c;
+    }
+
+        .like-btn.liked i {
+            animation: heartBeat 0.3s ease;
+        }
+
+/* анимация лайка */
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Кнопка переключения комментариев */
+.comment-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #3a5a3a;
+    transition: all 0.2s;
+    padding: 6px 12px;
+    border-radius: 30px;
+}
+
+    .comment-toggle-btn:hover {
+        background: rgba(0,150,60,0.1);
+    }
+
+.like-count,
+.comment-count {
+    font-weight: 600;
+}
+/*-------------------------------------------------------*/
+
+/* комментарии */
+.comments-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,150,60,0.15);
+}
+
+.comments-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a3a1a;
+    margin-bottom: 16px;
+}
+
+.comments-list {
+    margin-bottom: 20px;
+}
+
+.comment-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,150,60,0.1);
+}
+
+.comment-avatar {
+    width: 32px;
+    height: 32px;
+    background: rgba(0,150,60,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #2e7d32;
+}
+
+.comment-body {
+    flex: 1;
+}
+
+.comment-author {
+    font-weight: 600;
+    font-size: 13px;
+    color: #1a3a1a;
+    margin-bottom: 4px;
+}
+
+.comment-text {
+    font-size: 13px;
+    color: #2a4a2a;
+    line-height: 1.5;
+}
+
+.comment-date {
+    font-size: 10px;
+    color: #3a5a3a;
+    margin-top: 4px;
+}
+/*-------------------------------------------------------*/
+
+/*форма добавления коммментария */
+.add-comment-form {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.comment-input {
+    flex: 1;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.8);
+    border: 1px solid rgba(0,150,60,0.3);
+    border-radius: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    resize: none;
+}
+
+    .comment-input:focus {
+        outline: none;
+        border-color: #4caf50;
+        background: white;
+    }
+
+.submit-comment {
+    background: linear-gradient(135deg, #2e7d32, #4caf50);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+    .submit-comment:hover {
+        transform: scale(1.02);
+    }
+/*-------------------------------------------------------*/
+
+/* футер */
+.footer {
+    background: linear-gradient(135deg, #1a3a1a, #0e2a0e);
+    color: white;
+    margin-top: 60px;
+    padding: 48px 5% 24px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-logo div:first-child {
+    font-size: 28px;
+    font-weight: 700;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 16px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-links {
+    margin: 24px 0;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+    .footer-links a {
+        font-size: 14px;
+        color: white;
+        text-decoration: none;
+        opacity: 0.8;
+        transition: opacity 0.2s;
+    }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+.footer-copyright p {
+    font-size: 12px;
+    opacity: 0.6;
+}
+/*-------------------------------------------------------*/
+
+/* адаптив */
+@media (max-width: 768px) {
+    .blog-title {
+        font-size: 48px;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .post-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .add-comment-form {
+        flex-direction: column;
+    }
+
+    .submit-comment {
+        padding: 12px;
+    }
+}
+/*-------------------------------------------------------*/
+
+/* бургер меню */
+
+/* Кнопка бургера */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+    .burger span {
+        width: 100%;
+        height: 3px;
+        background: white;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    /* Анимация бургера в крестик */
+    .burger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+/* Мобильное меню (выезжающее справа) */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(0, 180, 70, 0.98), rgba(0, 150, 60, 0.98));
+    backdrop-filter: blur(20px);
+    z-index: 1001;
+    padding: 80px 30px 30px;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 30px rgba(0,0,0,0.2);
+}
+
+    .mobile-menu.active {
+        right: 0;
+    }
+
+    .mobile-menu a {
+        display: block;
+        color: white;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 15px 0;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        transition: all 0.2s;
+    }
+
+        .mobile-menu a:hover {
+            opacity: 0.8;
+            padding-left: 10px;
+        }
+
+/* Затемнение фона при открытом меню */
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: none;
+}
+
+    .mobile-overlay.active {
+        display: block;
+    }
+
+
+/* адаптив бургера */
+@media (max-width: 768px) {
+    /* Показываем бургер */
+    .burger {
+        display: flex;
+    }
+
+    /* Скрываем обычную навигацию */
+    .nav-menu,
+    .nav-menu-small {
+        display: none !important;
+    }
+
+    /* Шапка на мобилках */
+    #main-header,
+    #header {
+        width: 95% !important;
+        padding: 10px 16px !important;
+        top: 10px !important;
+        left: 2.5% !important;
+        transform: none !important;
+    }
+
+        /* Логотип на мобилках */
+        #main-header .logo,
+        #header .logo {
+            width: 36px !important;
+            height: 36px !important;
+            font-size: 18px !important;
+        }
+
+        /* Отключаем скрытие шапки на мобилках */
+        #main-header.hidden,
+        #header.hidden {
+            transform: none !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: all !important;
+        }
+
+    /* Скрываем маленькую шапку */
+    #compact-header,
+    #compactheader {
+        display: none !important;
+    }
+}
+/*-------------------------------------------------------*/
